@@ -11,7 +11,7 @@ import {
   TwitterDMButton,
   TwitterVideoEmbed,
   TwitterOnAirButton
-} from './dist/react-twitter-embed';
+} from './dist/react-twitter-embed-next';
 export {
   TwitterTimelineEmbed,
   TwitterShareButton,
