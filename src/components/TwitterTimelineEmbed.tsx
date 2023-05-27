@@ -271,50 +271,51 @@ const TwitterTimelineEmbed = (props: TwitterTimelineEmbedPropsType): any => {
 
   React.useEffect(() => {
     let isComponentMounted = true;
-    const script = require('scriptjs');
-    script(twitterWidgetJs, 'twitter-embed', () => {
-      if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load');
-        return;
-      }
-      if (isComponentMounted) {
-        if (!window.twttr.widgets[methodName]) {
-          console.error(
-            `Method ${methodName} is not present anymore in twttr.widget api`
-          );
+    import('scriptjs').then((script) => {
+      script.default(twitterWidgetJs, 'twitter-embed', () => {
+        if (!window.twttr) {
+          console.error('Failure to load window.twttr, aborting load');
           return;
         }
-
-        let options = buildOptions();
-        /** Append chrome options */
-        options = buildChromeOptions(options);
-
-        window.twttr.widgets[methodName](
-          {
-            // @ts-ignore
-            sourceType: props.sourceType,
-            // @ts-ignore
-            screenName: props.screenName,
-            // @ts-ignore
-            userId: props.userId,
-            // @ts-ignore
-            ownerScreenName: props.ownerScreenName,
-            // @ts-ignore
-            slug: props.slug,
-            // @ts-ignore
-            id: props.id || props.widgetId,
-            // @ts-ignore
-            url: props.url
-          },
-          ref?.current,
-          options
-        ).then((element: any) => {
-          setLoading(false);
-          if (props.onLoad) {
-            props.onLoad(element);
+        if (isComponentMounted) {
+          if (!window.twttr.widgets[methodName]) {
+            console.error(
+              `Method ${methodName} is not present anymore in twttr.widget api`
+            );
+            return;
           }
-        });
-      }
+
+          let options = buildOptions();
+          /** Append chrome options */
+          options = buildChromeOptions(options);
+
+          window.twttr.widgets[methodName](
+            {
+              // @ts-ignore
+              sourceType: props.sourceType,
+              // @ts-ignore
+              screenName: props.screenName,
+              // @ts-ignore
+              userId: props.userId,
+              // @ts-ignore
+              ownerScreenName: props.ownerScreenName,
+              // @ts-ignore
+              slug: props.slug,
+              // @ts-ignore
+              id: props.id || props.widgetId,
+              // @ts-ignore
+              url: props.url
+            },
+            ref?.current,
+            options
+          ).then((element: any) => {
+            setLoading(false);
+            if (props.onLoad) {
+              props.onLoad(element);
+            }
+          });
+        }
+      });
     });
 
     // cleaning up

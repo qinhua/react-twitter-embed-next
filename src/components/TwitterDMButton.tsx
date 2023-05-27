@@ -38,33 +38,34 @@ const TwitterDMButton = (props: TwitterDMButtonProps): any => {
 
   React.useEffect(() => {
     let isComponentMounted = true;
-    const script = require('scriptjs');
-    script(twitterWidgetJs, 'twitter-embed', () => {
-      if (!window.twttr) {
-        console.error('Failure to load window.twttr, aborting load');
-        return;
-      }
-      if (isComponentMounted) {
-        if (!window.twttr.widgets[methodName]) {
-          console.error(
-            `Method ${methodName} is not present anymore in twttr.widget api`
-          );
+    import('scriptjs').then((script) => {
+      script.default(twitterWidgetJs, 'twitter-embed', () => {
+        if (!window.twttr) {
+          console.error('Failure to load window.twttr, aborting load');
           return;
         }
-
-        window.twttr.widgets[methodName](
-          props.id,
-          ref?.current,
-          props.options
-        ).then((element: any) => {
-          if (isComponentMounted) {
-            setLoading(false);
-            if (props.onLoad) {
-              props.onLoad(element);
-            }
+        if (isComponentMounted) {
+          if (!window.twttr.widgets[methodName]) {
+            console.error(
+              `Method ${methodName} is not present anymore in twttr.widget api`
+            );
+            return;
           }
-        });
-      }
+
+          window.twttr.widgets[methodName](
+            props.id,
+            ref?.current,
+            props.options
+          ).then((element: any) => {
+            if (isComponentMounted) {
+              setLoading(false);
+              if (props.onLoad) {
+                props.onLoad(element);
+              }
+            }
+          });
+        }
+      });
     });
 
     // cleaning up
