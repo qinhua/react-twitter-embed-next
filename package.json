@@ -2,12 +2,12 @@
   "name": "react-twitter-embed-next",
   "version": "1.0.1",
   "description": "embed twitter in your react project easily",
-  "author": "Saurabh Nemade",
+  "author": "qinhua",
   "license": "MIT",
-  "repository": "saurabhnemade/react-twitter-embed",
-  "main": "dist/react-twitter-embed.umd.js",
-  "module": "dist/react-twitter-embed.mjs",
-  "browser": "dist/react-twitter-embed.mjs",
+  "repository": "https://github.com/qinhua/react-twitter-embed-next",
+  "main": "dist/react-twitter-embed-next.umd.js",
+  "module": "dist/react-twitter-embed-next.mjs",
+  "browser": "dist/react-twitter-embed-next.mjs",
   "engines": {
     "node": ">=14"
   },
