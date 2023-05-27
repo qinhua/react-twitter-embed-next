@@ -1,27 +1,38 @@
-
 # React Twitter Embed Component
 
 [![NPM](https://img.shields.io/npm/v/react-twitter-embed.svg)](https://www.npmjs.com/package/react-twitter-embed) [![Storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](https://saurabhnemade.github.io/react-twitter-embed/) [![Build Status](https://travis-ci.org/saurabhnemade/react-twitter-embed.svg?branch=storybook-migration)](https://travis-ci.org/saurabhnemade/react-twitter-embed) [![Known Vulnerabilities](https://snyk.io/test/github/saurabhnemade/react-twitter-embed/badge.svg)](https://snyk.io/test/github/saurabhnemade/react-twitter-embed) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://raw.githubusercontent.com/saurabhnemade/react-twitter-embed/master/LICENSE)
-
 
 React Twitter Embed Component
 
 Simplest way to add Twitter Widgets to your react project.
 
 ## Demo and Examples
-https://saurabhnemade.github.io/react-twitter-embed/
 
+https://saurabhnemade.github.io/react-twitter-embed/
 
 ## Install
 
 ```bash
-npm install --save react-twitter-embed
+yarn add react-twitter-embed-next -S
+# or
+npm install react-twitter-embed-next -S
 ```
 
 ## Usage
 
 ```jsx
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import {
+  TwitterTimelineEmbed,
+  TwitterShareButton,
+  TwitterFollowButton,
+  TwitterHashtagButton,
+  TwitterMentionButton,
+  TwitterTweetEmbed,
+  TwitterMomentShare,
+  TwitterDMButton,
+  TwitterVideoEmbed,
+  TwitterOnAirButton
+} from 'react-twitter-embed';
 ```
 
 **Adding Timeline:**
@@ -91,7 +102,6 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 
       https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/overview
 
-
 ## License
 
 MIT © [saurabhnemade](https://github.com/saurabhnemade)
@@ -115,4 +125,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
