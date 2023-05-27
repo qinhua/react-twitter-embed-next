@@ -1,6 +1,6 @@
 {
   "name": "react-twitter-embed-next",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "embed twitter in your react project easily",
   "author": "Saurabh Nemade",
   "license": "MIT",
@@ -74,6 +74,7 @@
     "webpack-dev-server": "^4.7.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ]
 }
